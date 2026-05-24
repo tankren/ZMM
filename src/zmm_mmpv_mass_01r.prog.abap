@@ -16,14 +16,14 @@ REPORT zmm_mmpv_mass_01r.
 * Local types
 TYPES: BEGIN OF ty_output,
          status     TYPE icon_d,
-         bukrs      TYPE t001-bukrs,
+         bukrs      TYPE bukrs,
          month(2)   TYPE n,
          year(4)    TYPE n,
          status_txt TYPE string,
        END OF ty_output.
 
 TYPES: BEGIN OF ty_itab,
-         bukrs TYPE t001-bukrs,
+         bukrs TYPE bukrs,
        END OF ty_itab.
 
 * ALV相关定义
@@ -55,7 +55,7 @@ DATA: lv_month TYPE numc2.
 DATA: lv_year  TYPE numc4.
 
 * 参数定义
-SELECT-OPTIONS: s_bukrs FOR t001-bukrs DEFAULT '0001' TO 'ZZZZ'.
+SELECT-OPTIONS: s_bukrs FOR bukrs DEFAULT '0001' TO 'ZZZZ'.
 SELECTION-SCREEN ULINE /1(30).
 PARAMETERS: p_test  AS CHECKBOX.
 PARAMETERS: p_result AS CHECKBOX DEFAULT 'X'.
